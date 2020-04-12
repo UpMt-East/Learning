@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理画面｜商品登録フォーム</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="form-group col-sm-10 col-sm-offset-1">
+                <h2 class="page-header">商品登録フォーム</h2>
+            </div>
+            <form method="post" action="/admin/register/item/confirm" enctype="multipart/form-data" th:object="${item_form}" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-1 col-sm-offset-1 control-label">商品名</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{itemName}" th:value="*{itemName}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 col-sm-offset-1 control-label">種別</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{itemType}" th:value="*{itemType}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 col-sm-offset-1 control-label">価格</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{price}" th:value="*{price}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 col-sm-offset-1 control-label">画像</label>
+                    <div class="col-sm-9">
+                        <input type="file" name="item_image">
+                    </div>
+                </div>
+                <div class="col-sm-2 col-sm-offset-5">
+                    <button type="submit" class="btn btn-primary btn-block">確認する</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
